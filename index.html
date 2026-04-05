@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerdasyuk! | Platform Tryout UTBK SNBT Terbaik</title>
+    <title>Cerdasyuk! | Tryout UTBK SNBT Moderen</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script>
         tailwind.config = {
             theme: {
@@ -20,12 +19,13 @@
                     },
                     colors: {
                         brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            900: '#1e3a8a',
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            800: '#075985',
+                            900: '#0c4a6e',
                         }
                     }
                 }
@@ -34,296 +34,227 @@
     </script>
 
     <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; overflow-x: hidden; }
+        
+        /* Modern subtle mesh background */
+        .mesh-bg {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(199,89%,82%,1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(215,98%,87%,1) 0px, transparent 50%);
         }
 
-        /* Glassmorphism Effect */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        /* Bento Grid Hover Effects */
+        .bento-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.15);
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 8px 32px 0 rgba(37, 99, 235, 0.05);
-        }
-
-        /* Scroll Reveal Animations */
+        /* Scroll Reveal */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
             transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
         }
-
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Floating Animation for Hero Element */
-        .float-anim {
-            animation: floating 3s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-
-        /* Blob Backgrounds */
-        .blob {
-            position: absolute;
-            filter: blur(80px);
-            z-index: -1;
-            opacity: 0.6;
-        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body class="text-slate-800 antialiased mesh-bg">
 
-    <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-300">
+    <nav class="fixed w-full z-50 top-0 bg-white/80 backdrop-blur-md border-b border-slate-200/50 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-2">
-                    <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/30">
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <div class="w-10 h-10 bg-gradient-to-br from-brand-400 to-brand-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-md">
                         C!
                     </div>
                     <span class="font-extrabold text-2xl text-slate-900 tracking-tight">Cerdas<span class="text-brand-600">yuk!</span></span>
                 </div>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#fitur" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Fitur</a>
-                    <a href="#keunggulan" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Keunggulan</a>
-                    <a href="#harga" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Paket Tryout</a>
-                    <a href="#" class="text-brand-600 font-semibold hover:text-brand-700 transition-colors">Masuk</a>
-                    <a href="#" class="bg-brand-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-500/30 transition-all duration-300 transform hover:-translate-y-0.5">Daftar Sekarang</a>
+                
+                <div class="hidden md:flex space-x-8 items-center bg-white/50 px-6 py-2 rounded-full border border-slate-100 shadow-sm">
+                    <a href="#fitur" class="text-sm text-slate-600 hover:text-brand-600 font-semibold transition-colors">Fitur</a>
+                    <a href="#simulasi" class="text-sm text-slate-600 hover:text-brand-600 font-semibold transition-colors">Simulasi</a>
+                    <a href="#harga" class="text-sm text-slate-600 hover:text-brand-600 font-semibold transition-colors">Paket</a>
                 </div>
+
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="#" class="text-sm font-bold text-slate-600 hover:text-brand-600 transition-colors">Masuk</a>
+                    <a href="#" class="bg-slate-900 text-white text-sm px-5 py-2.5 rounded-full font-bold hover:bg-brand-600 hover:shadow-lg hover:shadow-brand-500/30 transition-all duration-300">Daftar Tryout</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 absolute w-full left-0 top-20 shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#fitur" class="block px-3 py-3 rounded-md text-base font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50">Fitur</a>
+                <a href="#simulasi" class="block px-3 py-3 rounded-md text-base font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50">Simulasi</a>
+                <a href="#harga" class="block px-3 py-3 rounded-md text-base font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50">Paket Tryout</a>
+                <div class="border-t border-slate-100 my-2 pt-4"></div>
+                <a href="#" class="block w-full text-center px-3 py-3 text-base font-bold text-slate-700 hover:text-brand-600">Masuk</a>
+                <a href="#" class="block w-full text-center mt-2 px-3 py-3 rounded-xl text-base font-bold bg-brand-600 text-white hover:bg-brand-700">Daftar Sekarang</a>
             </div>
         </div>
     </nav>
 
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="blob bg-brand-200 w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
-        <div class="blob bg-blue-200 w-96 h-96 rounded-full bottom-0 right-0 translate-x-1/3 translate-y-1/3"></div>
+    <section class="pt-36 pb-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center reveal active">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-8">
+            <span class="flex h-2 w-2 rounded-full bg-green-500"></span>
+            <span class="text-xs font-bold text-slate-600 uppercase tracking-wider">Pendaftaran Batch 4 Dibuka</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
+            Tembus SNBT Lebih <br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-cyan-400">Pasti & Terukur.</span>
+        </h1>
+        
+        <p class="mt-4 max-w-2xl text-lg md:text-xl text-slate-600 mx-auto mb-10 leading-relaxed">
+            Berhenti menebak-nebak skor. Gunakan platform tryout dengan sistem IRT paling akurat dan rasionalisasi kampus impianmu dalam satu *dashboard*.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#" class="w-full sm:w-auto bg-slate-900 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-600 hover:shadow-xl hover:shadow-brand-500/30 transition-all duration-300">
+                Mulai Belajar Gratis <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+            <a href="#fitur" class="w-full sm:w-auto bg-white text-slate-700 px-8 py-4 rounded-full font-bold text-lg border border-slate-200 hover:border-brand-400 hover:text-brand-600 transition-all duration-300">
+                Lihat Sistem Kami
+            </a>
+        </div>
+        
+        <div class="mt-16 relative mx-auto w-full max-w-4xl rounded-2xl border border-slate-200/50 bg-white/50 backdrop-blur-sm p-2 shadow-2xl shadow-brand-500/10">
+            <div class="rounded-xl overflow-hidden bg-slate-100 aspect-video relative flex items-center justify-center border border-slate-200">
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-50 to-slate-100"></div>
+                <div class="relative text-center">
+                    <i class="fa-solid fa-chart-pie text-6xl text-brand-300 mb-4"></i>
+                    <p class="text-slate-400 font-semibold">Preview Dashboard Interaktif Anda Di Sini</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="w-full lg:w-1/2 text-center lg:text-left reveal active">
-                    <div class="inline-block px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-600 font-semibold text-sm mb-6">
-                        🔥 Platform Tryout SNBT #1 di Indonesia
-                    </div>
-                    <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-slate-900">
-                        Tembus Kampus Impianmu Bersama <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-blue-400">Cerdasyuk!</span>
-                    </h1>
-                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                        Rasakan simulasi UTBK sesungguhnya dengan sistem penilaian IRT terakurat, soal HOTS terbaru, dan rasionalisasi peluang lolos PTN.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#" class="bg-brand-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-700 hover:shadow-xl hover:shadow-brand-500/40 transition-all duration-300 transform hover:-translate-y-1 text-center">
-                            Mulai Tryout Gratis
-                        </a>
-                        <a href="#fitur" class="bg-white text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-full font-bold text-lg hover:border-brand-600 hover:text-brand-600 transition-all duration-300 text-center">
-                            Pelajari Fitur
-                        </a>
-                    </div>
-                    <div class="mt-8 flex items-center justify-center lg:justify-start gap-4 text-sm text-slate-500 font-medium">
-                        <div class="flex -space-x-3">
-                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=1" alt="User">
-                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=2" alt="User">
-                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=3" alt="User">
-                            <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-600">+10k</div>
+    <section id="fitur" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+            <h2 class="text-brand-600 font-extrabold tracking-widest uppercase text-sm mb-2">Inovasi Cerdasyuk!</h2>
+            <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900">Dirancang Untuk Menang.</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 auto-rows-[250px]">
+            
+            <div class="bento-card bg-white rounded-3xl p-8 border border-slate-200 shadow-sm md:col-span-2 md:row-span-2 relative overflow-hidden group reveal">
+                <div class="absolute -right-10 -top-10 w-64 h-64 bg-brand-50 rounded-full blur-3xl group-hover:bg-brand-100 transition-colors"></div>
+                <div class="relative z-10 flex flex-col h-full justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-calculator"></i>
                         </div>
-                        <p>Telah dipercaya 10.000+ pejuang PTN</p>
+                        <h4 class="text-3xl font-extrabold text-slate-900 mb-4">Sistem Penilaian IRT 100% Akurat</h4>
+                        <p class="text-slate-600 text-lg max-w-md">Bobot nilai setiap soal dihitung berdasarkan tingkat kesulitan yang disesuaikan dengan respon seluruh peserta tryout. Mirip dengan algoritma SNPMB asli.</p>
+                    </div>
+                    <div class="mt-8 flex items-end gap-2 h-24 opacity-80">
+                        <div class="w-1/6 bg-brand-200 h-2/6 rounded-t-md"></div>
+                        <div class="w-1/6 bg-brand-300 h-4/6 rounded-t-md"></div>
+                        <div class="w-1/6 bg-brand-400 h-3/6 rounded-t-md"></div>
+                        <div class="w-1/6 bg-brand-500 h-full rounded-t-md"></div>
+                        <div class="w-1/6 bg-brand-300 h-5/6 rounded-t-md"></div>
+                        <div class="w-1/6 bg-brand-200 h-2/6 rounded-t-md"></div>
                     </div>
                 </div>
+            </div>
 
-                <div class="w-full lg:w-1/2 relative reveal active">
-                    <div class="glass-card rounded-2xl p-6 relative float-anim">
-                        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
-                            </div>
-                            <span class="text-xs font-semibold text-slate-400">Simulasi Tryout SNBT</span>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="h-4 bg-slate-100 rounded w-3/4"></div>
-                            <div class="h-4 bg-slate-100 rounded w-full"></div>
-                            <div class="h-4 bg-slate-100 rounded w-5/6"></div>
-                        </div>
-                        <div class="mt-8 grid grid-cols-2 gap-4">
-                            <div class="bg-brand-50 p-4 rounded-xl border border-brand-100">
-                                <p class="text-xs text-brand-600 font-bold mb-1">Skor Rata-rata</p>
-                                <p class="text-2xl font-extrabold text-slate-800">685.50</p>
-                            </div>
-                            <div class="bg-green-50 p-4 rounded-xl border border-green-100">
-                                <p class="text-xs text-green-600 font-bold mb-1">Peluang Lolos UI</p>
-                                <p class="text-2xl font-extrabold text-slate-800">82%</p>
-                            </div>
-                        </div>
-                        <div class="absolute -right-6 -bottom-6 bg-white p-4 rounded-xl shadow-xl shadow-slate-200/50 flex items-center gap-3 border border-slate-100">
-                            <div class="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl">
-                                <i class="fa-solid fa-check"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold text-slate-500">Sistem Penilaian</p>
-                                <p class="text-sm font-extrabold text-slate-800">IRT Akurat</p>
-                            </div>
-                        </div>
+            <div class="bento-card bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-sm relative overflow-hidden reveal">
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-600/20 to-transparent"></div>
+                <div class="relative z-10">
+                    <div class="w-10 h-10 bg-slate-800 text-white rounded-full flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Soal HOTS Update</h4>
+                    <p class="text-slate-400 text-sm">Ribuan bank soal Penalaran Umum & Literasi terbaru yang menantang nalar.</p>
+                </div>
+            </div>
+
+            <div class="bento-card bg-gradient-to-br from-brand-500 to-cyan-400 rounded-3xl p-8 text-white shadow-lg shadow-brand-500/20 reveal">
+                <div class="flex flex-col h-full justify-between">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Rasionalisasi Kampus</h4>
+                        <p class="text-brand-50 text-sm">Bandingkan skormu dengan passing grade jurusan impian di UI, ITB, UGM, dll.</p>
+                    </div>
+                    <div class="text-right">
+                        <i class="fa-solid fa-arrow-trend-up text-4xl opacity-50"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="fitur" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-2">Kenapa Cerdasyuk?</h2>
-                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Fitur Lengkap untuk Belajar Maksimal</h3>
-                <p class="text-slate-600 text-lg">Kami mendesain sistem yang mirip dengan aslinya agar kamu terbiasa dan tidak gugup saat hari H.</p>
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal">
+        <div class="bg-slate-900 rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between">
+            <div class="absolute -left-20 -top-20 w-64 h-64 bg-brand-500/30 rounded-full blur-3xl"></div>
+            
+            <div class="relative z-10 max-w-xl text-center md:text-left mb-8 md:mb-0">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Jangan tunggu H-1 untuk tes kemampuanmu.</h2>
+                <p class="text-slate-400 text-lg">Daftar sekarang dan dapatkan 1x Tryout Premium Gratis untuk merasakan sensasi ujian SNBT yang sesungguhnya.</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 reveal">
-                    <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Sistem Penilaian IRT</h4>
-                    <p class="text-slate-600">Skor dievaluasi menggunakan Item Response Theory (IRT), persis seperti perhitungan asli panitia SNPMB.</p>
-                </div>
-                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 reveal">
-                    <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Soal Prediktif & HOTS</h4>
-                    <p class="text-slate-600">Ribuan bank soal berstandar Higher Order Thinking Skills (HOTS) yang diupdate berkala sesuai kisi-kisi terbaru.</p>
-                </div>
-                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 reveal">
-                    <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-video"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Pembahasan Video</h4>
-                    <p class="text-slate-600">Bingung dengan jawabanmu? Tonton video pembahasan langkah demi langkah oleh tutor berpengalaman.</p>
-                </div>
+            
+            <div class="relative z-10 w-full md:w-auto">
+                <a href="#" class="block w-full text-center bg-white text-slate-900 px-8 py-4 rounded-full font-extrabold text-lg hover:bg-brand-50 hover:scale-105 transition-all duration-300">
+                    Daftar Tryout Sekarang
+                </a>
+                <p class="text-center text-slate-500 text-xs mt-4">Tanpa kartu kredit.</p>
             </div>
         </div>
     </section>
 
-    <section id="harga" class="py-20 bg-slate-50 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Pilih Paket Belajarmu</h3>
-                <p class="text-slate-600 text-lg">Investasi terbaik untuk masa depanmu. Pilih paket yang sesuai dengan kebutuhanmu.</p>
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center text-white font-bold">C!</div>
+                <span class="font-bold text-xl text-slate-900">Cerdasyuk!</span>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="bg-white rounded-3xl p-8 border border-slate-200 hover:border-brand-300 transition-colors reveal">
-                    <h4 class="text-xl font-bold text-slate-900 mb-2">Paket Ambis</h4>
-                    <p class="text-slate-500 text-sm mb-6">Cocok untuk pemanasan.</p>
-                    <div class="mb-6">
-                        <span class="text-4xl font-extrabold text-slate-900">Rp 49.000</span>
-                        <span class="text-slate-500">/bulan</span>
-                    </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center gap-3 text-slate-700">
-                            <i class="fa-solid fa-check text-green-500"></i> 5x Tryout Premium
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-700">
-                            <i class="fa-solid fa-check text-green-500"></i> Pembahasan Teks
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-400">
-                            <i class="fa-solid fa-xmark"></i> <del>Pembahasan Video</del>
-                        </li>
-                    </ul>
-                    <a href="#" class="block w-full text-center bg-brand-50 text-brand-600 font-bold py-3 rounded-xl hover:bg-brand-100 transition-colors">Pilih Paket</a>
-                </div>
-
-                <div class="bg-brand-600 rounded-3xl p-8 border border-brand-500 shadow-2xl shadow-brand-500/40 transform md:-translate-y-4 relative reveal">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-bold text-xs py-1 px-4 rounded-full uppercase tracking-wide">
-                        Paling Laris
-                    </div>
-                    <h4 class="text-xl font-bold text-white mb-2">Paket Lolos PTN</h4>
-                    <p class="text-brand-100 text-sm mb-6">Fasilitas lengkap untuk skor maksimal.</p>
-                    <div class="mb-6">
-                        <span class="text-4xl font-extrabold text-white">Rp 99.000</span>
-                        <span class="text-brand-200">/bulan</span>
-                    </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center gap-3 text-white">
-                            <i class="fa-solid fa-check text-yellow-300"></i> Unlimited Tryout Premium
-                        </li>
-                        <li class="flex items-center gap-3 text-white">
-                            <i class="fa-solid fa-check text-yellow-300"></i> Sistem Penilaian IRT
-                        </li>
-                        <li class="flex items-center gap-3 text-white">
-                            <i class="fa-solid fa-check text-yellow-300"></i> Pembahasan Video Lengkap
-                        </li>
-                        <li class="flex items-center gap-3 text-white">
-                            <i class="fa-solid fa-check text-yellow-300"></i> Rasionalisasi Peluang PTN
-                        </li>
-                    </ul>
-                    <a href="#" class="block w-full text-center bg-white text-brand-600 font-bold py-3 rounded-xl hover:bg-slate-50 hover:shadow-lg transition-all">Pilih Paket</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                            C!
-                        </div>
-                        <span class="font-extrabold text-xl tracking-tight">Cerdas<span class="text-brand-400">yuk!</span></span>
-                    </div>
-                    <p class="text-slate-400 mb-6 max-w-sm">Teman berjuang raih kampus impian. Evaluasi diri, tingkatkan skor, dan buktikan kamu bisa!</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Layanan</h4>
-                    <ul class="space-y-2 text-slate-400">
-                        <li><a href="#" class="hover:text-brand-400 transition-colors">Tryout SNBT</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition-colors">Bank Soal</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition-colors">Rasionalisasi PTN</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Bantuan</h4>
-                    <ul class="space-y-2 text-slate-400">
-                        <li><a href="#" class="hover:text-brand-400 transition-colors">FAQ</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition-colors">Syarat & Ketentuan</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition-colors">Hubungi Kami</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
-                <p>&copy; 2026 Cerdasyuk! by Saleso Group. All rights reserved.</p>
+            <p class="text-slate-500 text-sm text-center md:text-left">
+                &copy; 2026 Cerdasyuk! by Saleso Group. Membantu Siswa Indonesia Lolos PTN.
+            </p>
+            <div class="flex gap-4">
+                <a href="#" class="text-slate-400 hover:text-brand-600 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-brand-600 transition-colors"><i class="fa-brands fa-tiktok text-xl"></i></a>
             </div>
         </div>
     </footer>
 
     <script>
+        // Mobile Menu Toggle Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            // Change icon based on state
+            const icon = btn.querySelector('i');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        // Scroll Reveal Animation
         document.addEventListener('DOMContentLoaded', () => {
             const reveals = document.querySelectorAll('.reveal');
-
             const revealOnScroll = () => {
                 const windowHeight = window.innerHeight;
                 const elementVisible = 100;
-
                 reveals.forEach((reveal) => {
                     const elementTop = reveal.getBoundingClientRect().top;
                     if (elementTop < windowHeight - elementVisible) {
@@ -331,9 +262,8 @@
                     }
                 });
             };
-
             window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll(); // Trigger on initial load
+            revealOnScroll(); // Trigger on load
         });
     </script>
 </body>
