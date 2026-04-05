@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerdasyuk! | Platform Tryout UTBK SNBT Terbaik</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Effect */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(37, 99, 235, 0.05);
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Animation for Hero Element */
+        .float-anim {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Blob Backgrounds */
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/30">
+                        C!
+                    </div>
+                    <span class="font-extrabold text-2xl text-slate-900 tracking-tight">Cerdas<span class="text-brand-600">yuk!</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#fitur" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Fitur</a>
+                    <a href="#keunggulan" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Keunggulan</a>
+                    <a href="#harga" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Paket Tryout</a>
+                    <a href="#" class="text-brand-600 font-semibold hover:text-brand-700 transition-colors">Masuk</a>
+                    <a href="#" class="bg-brand-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-500/30 transition-all duration-300 transform hover:-translate-y-0.5">Daftar Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="blob bg-brand-200 w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="blob bg-blue-200 w-96 h-96 rounded-full bottom-0 right-0 translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2 text-center lg:text-left reveal active">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-600 font-semibold text-sm mb-6">
+                        🔥 Platform Tryout SNBT #1 di Indonesia
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-slate-900">
+                        Tembus Kampus Impianmu Bersama <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-blue-400">Cerdasyuk!</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Rasakan simulasi UTBK sesungguhnya dengan sistem penilaian IRT terakurat, soal HOTS terbaru, dan rasionalisasi peluang lolos PTN.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#" class="bg-brand-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-700 hover:shadow-xl hover:shadow-brand-500/40 transition-all duration-300 transform hover:-translate-y-1 text-center">
+                            Mulai Tryout Gratis
+                        </a>
+                        <a href="#fitur" class="bg-white text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-full font-bold text-lg hover:border-brand-600 hover:text-brand-600 transition-all duration-300 text-center">
+                            Pelajari Fitur
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center justify-center lg:justify-start gap-4 text-sm text-slate-500 font-medium">
+                        <div class="flex -space-x-3">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=1" alt="User">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=2" alt="User">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=3" alt="User">
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-600">+10k</div>
+                        </div>
+                        <p>Telah dipercaya 10.000+ pejuang PTN</p>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 relative reveal active">
+                    <div class="glass-card rounded-2xl p-6 relative float-anim">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-400">Simulasi Tryout SNBT</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="h-4 bg-slate-100 rounded w-3/4"></div>
+                            <div class="h-4 bg-slate-100 rounded w-full"></div>
+                            <div class="h-4 bg-slate-100 rounded w-5/6"></div>
+                        </div>
+                        <div class="mt-8 grid grid-cols-2 gap-4">
+                            <div class="bg-brand-50 p-4 rounded-xl border border-brand-100">
+                                <p class="text-xs text-brand-600 font-bold mb-1">Skor Rata-rata</p>
+                                <p class="text-2xl font-extrabold text-slate-800">685.50</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                                <p class="text-xs text-green-600 font-bold mb-1">Peluang Lolos UI</p>
+                                <p class="text-2xl font-extrabold text-slate-800">82%</p>
+                            </div>
+                        </div>
+                        <div class="absolute -right-6 -bottom-6 bg-white p-4 rounded-xl shadow-xl shadow-slate-200/50 flex items-center gap-3 border border-slate-100">
+                            <div class="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-500">Sistem Penilaian</p>
+                                <p class="text-sm font-extrabold text-slate-800">IRT Akurat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fitur" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-2">Kenapa Cerdasyuk?</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Fitur Lengkap untuk Belajar Maksimal</h3>
+                <p class="text-slate-600 text-lg">Kami mendesain sistem yang mirip dengan aslinya agar kamu terbiasa dan tidak gugup saat hari H.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 reveal">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Sistem Penilaian IRT</h4>
+                    <p class="text-slate-600">Skor dievaluasi menggunakan Item Response Theory (IRT), persis seperti perhitungan asli panitia SNPMB.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 reveal">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Soal Prediktif & HOTS</h4>
+                    <p class="text-slate-600">Ribuan bank soal berstandar Higher Order Thinking Skills (HOTS) yang diupdate berkala sesuai kisi-kisi terbaru.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 reveal">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Pembahasan Video</h4>
+                    <p class="text-slate-600">Bingung dengan jawabanmu? Tonton video pembahasan langkah demi langkah oleh tutor berpengalaman.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="harga" class="py-20 bg-slate-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Pilih Paket Belajarmu</h3>
+                <p class="text-slate-600 text-lg">Investasi terbaik untuk masa depanmu. Pilih paket yang sesuai dengan kebutuhanmu.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 hover:border-brand-300 transition-colors reveal">
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Paket Ambis</h4>
+                    <p class="text-slate-500 text-sm mb-6">Cocok untuk pemanasan.</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-extrabold text-slate-900">Rp 49.000</span>
+                        <span class="text-slate-500">/bulan</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <i class="fa-solid fa-check text-green-500"></i> 5x Tryout Premium
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <i class="fa-solid fa-check text-green-500"></i> Pembahasan Teks
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-400">
+                            <i class="fa-solid fa-xmark"></i> <del>Pembahasan Video</del>
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full text-center bg-brand-50 text-brand-600 font-bold py-3 rounded-xl hover:bg-brand-100 transition-colors">Pilih Paket</a>
+                </div>
+
+                <div class="bg-brand-600 rounded-3xl p-8 border border-brand-500 shadow-2xl shadow-brand-500/40 transform md:-translate-y-4 relative reveal">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-bold text-xs py-1 px-4 rounded-full uppercase tracking-wide">
+                        Paling Laris
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Paket Lolos PTN</h4>
+                    <p class="text-brand-100 text-sm mb-6">Fasilitas lengkap untuk skor maksimal.</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-extrabold text-white">Rp 99.000</span>
+                        <span class="text-brand-200">/bulan</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-white">
+                            <i class="fa-solid fa-check text-yellow-300"></i> Unlimited Tryout Premium
+                        </li>
+                        <li class="flex items-center gap-3 text-white">
+                            <i class="fa-solid fa-check text-yellow-300"></i> Sistem Penilaian IRT
+                        </li>
+                        <li class="flex items-center gap-3 text-white">
+                            <i class="fa-solid fa-check text-yellow-300"></i> Pembahasan Video Lengkap
+                        </li>
+                        <li class="flex items-center gap-3 text-white">
+                            <i class="fa-solid fa-check text-yellow-300"></i> Rasionalisasi Peluang PTN
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full text-center bg-white text-brand-600 font-bold py-3 rounded-xl hover:bg-slate-50 hover:shadow-lg transition-all">Pilih Paket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                            C!
+                        </div>
+                        <span class="font-extrabold text-xl tracking-tight">Cerdas<span class="text-brand-400">yuk!</span></span>
+                    </div>
+                    <p class="text-slate-400 mb-6 max-w-sm">Teman berjuang raih kampus impian. Evaluasi diri, tingkatkan skor, dan buktikan kamu bisa!</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Layanan</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Tryout SNBT</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Bank Soal</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Rasionalisasi PTN</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Bantuan</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
+                <p>&copy; 2026 Cerdasyuk! by Saleso Group. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger on initial load
+        });
+    </script>
+</body>
+</html>
